@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">NilinGallery</string>
+
+    <string name="album_fragment">AlbumFragment</string>
+    <string name="users_fragment">UsersFragment</string>
+    <string name="photo_fragment">PhotoFragment</string>
+    <string name="single_photo_fragment">SinglePhotoFragment</string>
+    <string name="users">Users</string>
+    <string name="albums">Albums</string>
+    <string name="photos">Photos</string>
 </resources>
