@@ -1,0 +1,2 @@
+rootProject.name = "NilinGallery"
+include ':app'
