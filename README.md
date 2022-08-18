@@ -1,5 +1,5 @@
 # NilinGallery
-a sample android application gallery :)
+An android gallery application :)
 
 The Gallery application has the fllowing features :
 1. Offline mode using SQLite database
