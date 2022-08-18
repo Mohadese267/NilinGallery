@@ -2,21 +2,46 @@ package com.example.nilingallery.Classes.Model.Utilities;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.util.Log;
+
+import java.net.InetAddress;
 
 import static android.content.Context.MODE_PRIVATE;
 
 
 public class Helper {
     public static final String MY_PREFS_NAME = "NilinGalleryPreferences";
-    private SharedPreferences preferences;
+    private final SharedPreferences preferences;
     public static SharedPreferences.Editor editor;
-    private Context context;
+    private final Context context;
 
     public Helper(Context context) {
         this.context = context;
         preferences = context.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
         editor = preferences.edit();
     }
+    public boolean isInternetAvailable() {
+        if (isNetworkConnected())
+            try {
+                InetAddress ipAddress = InetAddress.getByName("google.com");
+                return !ipAddress.equals("");
+
+            } catch (Exception e) {
+                Log.e("helper",e.toString()+"");
+                return false;
+            }
+        else {
+            return false;
+        }
+
+    }
+    public boolean isNetworkConnected() {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
+    }
+
 
     public void setUserId(int userId) {
         editor.putInt("user_id", userId).apply();
@@ -43,11 +68,8 @@ public class Helper {
         return preferences.getString("photo_url", "empty");
     }
 
-    public String getEmail() {
-        return preferences.getString("email", "empty");
-    }
 
-    public void setEmail(String pass) {
-        editor.putString("email", pass).apply();
-    }
+
+
+
 }

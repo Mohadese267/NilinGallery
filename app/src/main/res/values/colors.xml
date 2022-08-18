@@ -11,4 +11,5 @@
     <color name="grey">#B5B5B3</color>
     <color name="black_transparent">#D0000000</color>
     <color name="app_background">#FBFBF3</color>
+    <color name="yellow">#FFC927</color>
 </resources>

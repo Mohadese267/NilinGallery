@@ -13,12 +13,10 @@
     app:cardUseCompatPadding="true">
     <ImageView
         android:id="@+id/photo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="center"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitCenter"
         android:src="@mipmap/ic_launcher" />
 </androidx.cardview.widget.CardView>
-
-
 
 </RelativeLayout>

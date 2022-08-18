@@ -11,26 +11,28 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nilingallery.Classes.Model.Base.Album;
-import com.example.nilingallery.Classes.Model.Base.User;
 import com.example.nilingallery.Classes.Model.Utilities.Helper;
 import com.example.nilingallery.R;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHolder> {
     private static final String TAG = "AlbumsAdapter";
-    private List<Album> mAlbums;
-    private Context context;
+    private final List<Album> mAlbums;
+    private final List<Album> albumsListCopy;
+    private final Context context;
     private String parentFragment;
-    private Helper helper;
+    private final Helper helper;
 
 
     public AlbumsAdapter(List<Album> users, Context context) {
         this.mAlbums = users;
         this.parentFragment = parentFragment;
+        albumsListCopy = new ArrayList<>(mAlbums);
         this.context = context;
         helper = new Helper(context);
     }
@@ -69,6 +71,25 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
     public int getItemCount() {
 
         return mAlbums.size();
+    }
+
+    //filters list of data while using search
+    public boolean filter(String query) {
+
+
+        mAlbums.clear();
+        if (query.isEmpty()) {
+            mAlbums.addAll(albumsListCopy);
+        } else {
+            query = query.toLowerCase();
+            for (Album item : albumsListCopy) {
+                if (item.title.toLowerCase().contains(query)) {
+                    mAlbums.add(item);
+                }
+            }
+        }
+        notifyDataSetChanged();
+        return !mAlbums.isEmpty();
     }
 
 

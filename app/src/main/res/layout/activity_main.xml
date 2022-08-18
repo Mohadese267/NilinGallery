@@ -8,5 +8,14 @@
     android:background="@color/app_background"
     tools:context=".Activity.MainActivity">
 
-    <include layout="@layout/content_main" />
+    <include layout="@layout/content_main"
+        />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/photo_illustration" />
+
 </RelativeLayout>
