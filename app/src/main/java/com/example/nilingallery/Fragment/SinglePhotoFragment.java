@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.example.nilingallery.Classes.Model.Utilities.Helper;
+import com.example.nilingallery.R;
 import com.example.nilingallery.databinding.FragmentPhotoSingleBinding;
 import com.squareup.picasso.Picasso;
 
@@ -37,12 +38,14 @@ public class SinglePhotoFragment extends Fragment {
 
     private void initialize() {
 
-        Picasso.get().load(helper.getPhotoUrl()).into(binding.image);
+        Picasso.get().load(helper.getPhotoUrl()).placeholder(R.drawable.placeholder).into(binding.image);
+
     }
 
     private void listeners() {
         binding.backBtn.setOnClickListener(view -> {
             Navigation.findNavController(view).navigateUp();
+
         });
     }
 }

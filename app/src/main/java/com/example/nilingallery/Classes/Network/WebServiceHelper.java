@@ -7,7 +7,7 @@ public class WebServiceHelper {
 
 
     public WebServiceHelper(Context context) {
-        service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
+        service = RetrofitClientInstance.getRetrofitInstance(context).create(GetDataService.class);
 
     }
 

@@ -1,11 +1,10 @@
 package com.example.nilingallery.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.nilingallery.Classes.Network.WebServiceHelper;
-import com.example.nilingallery.R;
 import com.example.nilingallery.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

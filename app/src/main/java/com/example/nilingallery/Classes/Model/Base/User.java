@@ -1,8 +1,6 @@
 package com.example.nilingallery.Classes.Model.Base;
 
 
-import com.example.nilingallery.Classes.Model.Base.Address;
-import com.example.nilingallery.Classes.Model.Base.Company;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

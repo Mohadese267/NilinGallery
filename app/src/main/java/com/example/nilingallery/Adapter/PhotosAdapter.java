@@ -1,18 +1,15 @@
 package com.example.nilingallery.Adapter;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.nilingallery.Classes.Model.Base.Album;
 import com.example.nilingallery.Classes.Model.Base.Photo;
 import com.example.nilingallery.Classes.Model.Utilities.Helper;
 import com.example.nilingallery.R;
@@ -25,10 +22,10 @@ import java.util.List;
 
 public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.MyViewHolder> {
     private static final String TAG = "PhotosAdapter";
-    private List<Photo> mPhotos;
-    private Context context;
+    private final List<Photo> mPhotos;
+    private final Context context;
     private String parentFragment;
-    private Helper helper;
+    private final Helper helper;
 
 
     public PhotosAdapter(List<Photo> photos, Context context) {
