@@ -80,6 +80,7 @@ public class PhotosFragment extends Fragment {
 
 //                    Log.e(TAG, response.body().toString() + "");
                     assert response.body() != null;
+                    mPhotos.clear();
                     mPhotos.addAll(response.body());
                     if (loadingDialog != null)
                         loadingDialog.dismiss();

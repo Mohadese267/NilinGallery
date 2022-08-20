@@ -71,6 +71,7 @@ public class UsersFragment extends Fragment {
         if (cursor.moveToFirst()) {
             do {
                 // on below line we are adding the data from cursor to our array list.
+                mUsers.clear();
                 mUsers.add(new User(Integer.parseInt(cursor.getString(0)),
                         cursor.getString(1),
                         cursor.getString(2), null, null, null, null, null));
@@ -121,6 +122,7 @@ public class UsersFragment extends Fragment {
 //                    Toast.makeText(getContext(), "successful", Toast.LENGTH_SHORT).show();
 
                     assert response.body() != null;
+                    mUsers.clear();
                     mUsers.addAll(response.body());
                     if (loadingDialog != null)
                         loadingDialog.dismiss();

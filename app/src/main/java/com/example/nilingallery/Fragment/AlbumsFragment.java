@@ -97,6 +97,7 @@ public class AlbumsFragment extends Fragment {
 
 //                    Log.e(TAG, response.body().toString() + "");
                     assert response.body() != null;
+                    mAlbum.clear();
                     mAlbum.addAll(response.body());
                     if (loadingDialog != null)
                         loadingDialog.dismiss();
